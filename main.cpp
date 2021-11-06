@@ -41,12 +41,10 @@ void parallel_partial_sum(Iterator first, Iterator last) {
 					*last += addend;
 					if (end_value)
 					{
-						//not last blocl
+						//not last block
 						end_value->set_value(*last);
 					}
-					for_each(begin, last, [addend](value_type& item) {
-						item += addend;
-						});
+					for_each(begin, last, [addend](value_type& item) { item += addend; });
 				}
 				else if (end_value)
 				{
